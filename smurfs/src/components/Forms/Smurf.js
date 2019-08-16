@@ -1,22 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchSmurf, addSmurf} from '../store/actions';
+import { fetchSmurf, addSmurf, deleteSmurf} from '../store/actions';
 import FormikSmurfForm from './SmurfForm';
+import { Button } from './StyledSmurfs.js';
 
 function Smurf(props) {
-//   const fetchSmurfs = () => {
-//     props.fetchSmurf();
-//   };
+    const deleteSmurfs = id => {
+        props.deleteSmurf(id);
+    };
 
   return (
     <div className="smurfs">
-      <button onClick={() => {props.fetchSmurf()}}> Fetch the Smurfs </button>
+      <Button onClick={() => {props.fetchSmurf()}}> Fetch the Smurfs </Button>
       {props.smurfs ? (
         props.smurfs.map(smurf => (
           <>
-            <h3>Name: {smurf.name}</h3>
-            <h3>Age: {smurf.age}</h3>
-            <h3>Height: {smurf.height}</h3>
+            <h4>Name: {smurf.name}</h4>
+            <h4>Age: {smurf.age}</h4>
+            <h4>Height: {smurf.height}</h4>
+            <Button onClick={() => deleteSmurfs(smurf.id)}>Smurf Left the Village</Button>
           </>
         ))
       ) : (
@@ -35,5 +37,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchSmurf, addSmurf}
+  { fetchSmurf, addSmurf, deleteSmurf}
 )(Smurf);
