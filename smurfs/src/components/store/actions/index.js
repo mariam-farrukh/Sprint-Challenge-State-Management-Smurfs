@@ -41,12 +41,12 @@ export const addSmurf = newSmurf => dispatch => {
         payload: res.data
       });
     })
-    .catch(rej => {
-      console.log("Rejected, newSmurf below", rej);
+    .catch(err => {
+      console.log("Rejected, newSmurf below", err);
       console.log(newSmurf);
       dispatch({
         type: POST_FAIL,
-        payload: rej.data
+        payload: err.data
       });
     });
 };
