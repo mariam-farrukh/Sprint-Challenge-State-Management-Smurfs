@@ -10,12 +10,13 @@ function Smurf(props) {
     };
 
   return (
-    <div> 
+    <div>
+        <FormikSmurfForm addSmurf={props.addSmurf} />
         <div className="smurfslist">
             <Button onClick={() => {props.fetchSmurf()}}> Fetch the Smurfs </Button>
             {props.smurfs ? (
                 props.smurfs.map(smurf => (
-                <div className="smurfs">
+                <div className="smurfs" key={smurf.name}>
                     <h4>Name: {smurf.name}</h4>
                     <h4>Age: {smurf.age}</h4>
                     <h4>Height: {smurf.height}</h4>
@@ -26,7 +27,6 @@ function Smurf(props) {
                 <h1> Smurfs will be here soon, please wait...</h1>
             )}
         </div>
-        <FormikSmurfForm addSmurf={props.addSmurf} />
     </div>
   );
 }

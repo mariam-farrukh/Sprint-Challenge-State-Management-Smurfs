@@ -8,7 +8,7 @@ import {
   DELETING_SMURF,
   DELETE_SMURF_FAIL,
   DELETE_SMURF_SUCCESS
-} from "../actions/index.js";
+} from "../actions";
 
 const initialState = {
   smurfs: [],
@@ -49,7 +49,6 @@ export const reducer = (state = initialState, action) => {
         error: action.payload
       };
     case POST_SUCCESS:
-    case GET_SMURF_SUCCESS:
       return {
         isFetching: false,
         error: "",
