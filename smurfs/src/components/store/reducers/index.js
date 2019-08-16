@@ -5,7 +5,7 @@ import {
   POSTING_NEW_SMURF,
   POST_FAIL,
   POST_SUCCESS,
-} from "../actions/action";
+} from "../actions/index.js";
 
 const initialState = {
   smurfs: [],
