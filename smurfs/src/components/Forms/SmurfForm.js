@@ -1,8 +1,11 @@
 import React from "react";
 import { withFormik, Form, Field } from "formik";
+import { Button } from './StyledSmurfs.js';
 
 function SmurfForm() {
   return (
+    <>
+    <h3>Enter Smurf Village</h3>
     <Form>
       <div>
         <Field name="name" type="text" placeholder="Name" required/>
@@ -13,8 +16,9 @@ function SmurfForm() {
       <div>
         <Field name="height" type="text" placeholder="Height" required/>
       </div>
-      <button type="submit">Send a smurf to the village</button>
+      <Button type="submit">Send a smurf to the village</Button>
     </Form>
+    </>
   );
 }
 

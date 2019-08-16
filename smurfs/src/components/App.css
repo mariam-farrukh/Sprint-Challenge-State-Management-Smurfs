@@ -25,6 +25,21 @@ Body {
   font-size: large;
 }
 
+.smurfsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.smurfs {
+  margin: 0.25em;
+  height: auto;
+  border-radius: 1em;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
