@@ -6,7 +6,7 @@ export const POSTING_NEW_SMURF = "POSTING_NEW_SMURF";
 export const POST_SUCCESS = "POST_SUCCESS";
 export const POST_FAIL = "POST_FAIL";
 
-export const GET_SMURF = () => dispatch => {
+export const fetchSmurf = () => dispatch => {
   dispatch({ type: FETCH_SMURFS });
   axios
     .get("http://localhost:3333/smurfs")
